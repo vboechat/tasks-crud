@@ -1,0 +1,9 @@
+# Project build and deps
+dist/
+node_modules/
+
+# IDEs and editors
+.idea/
+
+# Environment Variables
+.env
