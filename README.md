@@ -1,14 +1,14 @@
 # tasks-crud
 A simple CRUD application using NestJS, TypeORM, and MariaDB.
 
-This project was an **educational project** to learn how to use TypeORM with NestJS, 
+This project is an **educational project** to learn how to use TypeORM with NestJS, 
 I learned a lot and hope this project can help you too.
 
 ## Getting started
 
 ### Requirements / Prerequisites
 1. [Node.js](https://nodejs.org/en/) 
-2. [Yarn](https://yarnpkg.com/) (Recommended), you can use [NPM](https://www.npmjs.com/) as an alternative.
+2. Recommended: [Yarn](https://yarnpkg.com/). You can use [NPM](https://www.npmjs.com/) as an alternative.
 3. [MariaDB](https://mariadb.org/) or [MySQL](https://www.mysql.com/)
 
 ### Installation
