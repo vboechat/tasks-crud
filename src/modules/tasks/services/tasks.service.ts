@@ -21,13 +21,22 @@ export class TasksService {
   }
 
   async createTask(task: CreateTaskDto): Promise<Task> {
-    return await this.taskRepository.save(task);
+    const taskObject: Task = new Task();
+
+    taskObject.title = task.title;
+    taskObject.description = task.description;
+
+    return this.taskRepository.save(taskObject);
   }
 
   async updateTask(id: number, task: UpdateTaskDto): Promise<Task> {
-    await this.taskRepository.update(id, task);
+    const taskObject: Task = await this.findTaskById(id);
 
-    return await this.taskRepository.findOne({ where: { id } });
+    taskObject.title = task.title;
+    taskObject.description = task.description;
+    taskObject.isDone = task.isDone;
+
+    return this.taskRepository.save(taskObject);
   }
 
   async deleteTask(id: number): Promise<void> {
