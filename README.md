@@ -51,6 +51,11 @@ yarn test:cov
 
 You can see the API documentation at the [repository wiki](https://github.com/vboechat/tasks-crud/wiki).
 
+### Swagger
+
+You can enable swagger in the environment variable file by setting the `SWAGGER` variable to `true`.<br />
+Swagger will be available at the path `/api` by default, you can change this path by setting the `SWAGGER_PATH` variable.
+
 ## Environment Variables
 | Variable       | Description                 | Default   |
 |----------------|-----------------------------|-----------|
@@ -62,7 +67,8 @@ You can see the API documentation at the [repository wiki](https://github.com/vb
 | DB_PASSWORD    | Database password           | -         |
 | DB_NAME        | Database name               | -         |
 | DB_SYNCHRONIZE | Database synchronize        | true      |
-
+| SWAGGER_PATH   | Swagger path                | /api      |
+| SWAGGER        | Enable swagger              | false     |
 
 ## License
 This project is licensed under the [MIT LICENSE](https://choosealicense.com/licenses/mit/).
