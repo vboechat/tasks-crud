@@ -7,10 +7,12 @@ import {
   Param,
   Patch,
   Post,
+  Query,
 } from "@nestjs/common";
 
 import { ParseIdPipe } from "../../../common/pipes/parse-id.pipe";
 import { CreateTaskDto } from "../dtos/create-task.dto";
+import { PaginationDto } from "../dtos/pagination.dto";
 import { UpdateTaskDto } from "../dtos/update-task.dto";
 import { TasksService } from "../services/tasks.service";
 
@@ -19,8 +21,8 @@ export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
   @Get()
-  async findAllTasks() {
-    return this.tasksService.findAll();
+  async findAllTasks(@Query() pagination: PaginationDto) {
+    return this.tasksService.findAll(pagination);
   }
 
   @Get(":id")
