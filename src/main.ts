@@ -8,6 +8,7 @@ import {
 } from "@nestjs/platform-fastify";
 
 import { AppModule } from "./modules/app.module";
+import { configureSwagger } from "./swagger/swagger-config";
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -22,7 +23,9 @@ async function bootstrap() {
 
   app.enableCors();
   await app.register(fastifyCsrf);
-  await app.register(helmet);
+  await app.register(helmet, { contentSecurityPolicy: false });
+
+  configureSwagger(app);
 
   await app.listen(process.env.API_PORT, process.env.API_ADDRESS);
 }
