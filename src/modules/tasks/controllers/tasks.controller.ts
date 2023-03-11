@@ -9,6 +9,7 @@ import {
   Post,
   Query,
 } from "@nestjs/common";
+import { ApiTags } from "@nestjs/swagger";
 
 import { ParseIdPipe } from "../../../common/pipes/parse-id.pipe";
 import { CreateTaskDto } from "../dtos/create-task.dto";
@@ -17,12 +18,13 @@ import { UpdateTaskDto } from "../dtos/update-task.dto";
 import { TasksService } from "../services/tasks.service";
 
 @Controller("tasks")
+@ApiTags("tasks")
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
   @Get()
   async findAllTasks(@Query() pagination: PaginationDto) {
-    return this.tasksService.findAll(pagination);
+    return this.tasksService.findAllTasks(pagination);
   }
 
   @Get(":id")
