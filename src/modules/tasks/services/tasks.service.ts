@@ -14,7 +14,9 @@ export class TasksService {
     @InjectRepository(Task) private readonly taskRepository: Repository<Task>
   ) {}
 
-  async findAll(paginationDto: PaginationDto): Promise<FindAllTasksResponse> {
+  async findAllTasks(
+    paginationDto: PaginationDto
+  ): Promise<FindAllTasksResponse> {
     const { page, pageSize } = paginationDto;
     const skip = (page - 1) * pageSize;
     const items = await this.taskRepository.count();
