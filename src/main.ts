@@ -19,7 +19,7 @@ async function bootstrap() {
   app.setGlobalPrefix("api");
   app.enableVersioning({ type: VersioningType.URI, defaultVersion: "1" });
 
-  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
   app.enableCors();
   await app.register(fastifyCsrf);
