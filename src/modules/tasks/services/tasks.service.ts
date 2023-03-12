@@ -36,22 +36,13 @@ export class TasksService {
   }
 
   async createTask(task: CreateTaskDto): Promise<Task> {
-    const taskObject: Task = new Task();
-
-    taskObject.title = task.title;
-    taskObject.description = task.description;
-
-    return this.taskRepository.save(taskObject);
+    return this.taskRepository.save(task);
   }
 
   async updateTask(id: number, task: UpdateTaskDto): Promise<Task> {
-    const taskObject: Task = await this.findTaskById(id);
+    await this.taskRepository.update(id, task);
 
-    taskObject.title = task.title;
-    taskObject.description = task.description;
-    taskObject.isDone = task.isDone;
-
-    return this.taskRepository.save(taskObject);
+    return this.taskRepository.findOne({ where: { id } });
   }
 
   async deleteTask(id: number): Promise<void> {
