@@ -16,10 +16,12 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: Install dependencies with yarn
+      - name: Install dependencies
         uses: borales/actions-yarn@v4
-        run: yarn
+        with:
+          cmd: install
 
       - name: Run tests
         uses: borales/actions-yarn@v4
-        run: yarn test
+        with:
+          cmd: test
