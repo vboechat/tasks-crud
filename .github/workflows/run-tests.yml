@@ -21,6 +21,11 @@ jobs:
         with:
           cmd: install
 
+      - name: Build project
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
+
       - name: Run tests
         uses: borales/actions-yarn@v4
         with:
