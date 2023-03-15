@@ -15,7 +15,10 @@ import { TasksModule } from "./tasks/tasks.module";
       port: Number(process.env.DB_PORT),
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
+      database:
+        process.env.NODE_ENV === "test"
+          ? process.env.DB_TEST_NAME
+          : process.env.DB_NAME,
       synchronize: Boolean(process.env.DB_SYNC),
       autoLoadEntities: true,
       entities: [__dirname + "/**/*.entity.ts"],
