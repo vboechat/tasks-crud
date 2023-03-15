@@ -32,7 +32,7 @@ yarn start:dev
 yarn start:prod
 ```
 
-### Test (Soon)
+### Test
 
 ```bash
 # unit tests
@@ -57,18 +57,19 @@ You can enable swagger in the environment variable file by setting the `SWAGGER`
 Swagger will be available at the path `/api` by default, you can change this path by setting the `SWAGGER_PATH` variable.
 
 ## Environment Variables
-| Variable       | Description                 | Default   |
-|----------------|-----------------------------|-----------|
-| API_PORT       | Port to run the application | 3000      |
-| API_ADDRESS    | Address to run the app      | 0.0.0.0   |
-| DB_HOST        | Database host               | localhost |
-| DB_PORT        | Database port               | 3306      |
-| DB_USERNAME    | Database username           | -         |
-| DB_PASSWORD    | Database password           | -         |
-| DB_NAME        | Database name               | -         |
-| DB_SYNCHRONIZE | Database synchronize        | true      |
-| SWAGGER_PATH   | Swagger path                | /api      |
-| SWAGGER        | Enable swagger              | false     |
+| Variable       | Description                      | Default   |
+|----------------|----------------------------------|-----------|
+| API_PORT       | Port to run the application      | 3000      |
+| API_ADDRESS    | Address to run the app           | 0.0.0.0   |
+| DB_HOST        | Database host                    | localhost |
+| DB_PORT        | Database port                    | 3306      |
+| DB_USERNAME    | Database username                | -         |
+| DB_PASSWORD    | Database password                | -         |
+| DB_NAME        | Database name                    | -         |
+| DB_TEST_NAME   | Database test name for E2E tests | -         |
+| DB_SYNCHRONIZE | Database synchronize             | true      |
+| SWAGGER_PATH   | Swagger path                     | /api      |
+| SWAGGER        | Enable swagger                   | false     |
 
 ## License
 This project is licensed under the [MIT LICENSE](https://choosealicense.com/licenses/mit/).
