@@ -1,0 +1,32 @@
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: Run API tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install dependencies
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+
+      - name: Build project
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
+
+      - name: Run tests
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test

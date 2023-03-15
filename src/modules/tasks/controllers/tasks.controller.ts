@@ -11,7 +11,7 @@ import {
 } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 
-import { ParseIdPipe } from "../../../common/pipes/parse-id.pipe";
+import { ParseIdPipe } from "../../../common/pipes/ParseId.pipe";
 import { CreateTaskDto } from "../dtos/create-task.dto";
 import { PaginationDto } from "../dtos/pagination.dto";
 import { UpdateTaskDto } from "../dtos/update-task.dto";
