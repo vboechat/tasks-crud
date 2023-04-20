@@ -23,7 +23,7 @@
     "url": "https://github.com/vboechat/tasks-crud"
   },
   "dependencies": {
-    "@fastify/csrf-protection": "^6.2.0",
+    "@fastify/csrf-protection": "^6.3.0",
     "@fastify/helmet": "^10.1.0",
     "@fastify/static": "^6.9.0",
     "@nestjs/common": "^9.0.0",
